@@ -1,5 +1,5 @@
-# ge2015_analysis
-Code and data analysing the UK General Election Results May 2015
+# UK General Election 2015 Analysis
+D'Hondt Proportional Representation interpretation of the UK General Election Results May 2015
 
 GE2015_results.json - contains all the seats in the UK, the region they are in and the valid votes for each candidate.
 
