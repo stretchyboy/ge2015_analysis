@@ -1,5 +1,26 @@
 var fs = require('fs');
-var aSeats = JSON.parse(fs.readFileSync("GE2015_results.json"));
+var aSeats = JSON.parse(fs.readFileSync("GE2017_results_guardian.json"));
+// from https://interactive.guim.co.uk/2017/06/ukelection2017-data/snap/full.json
+// was file from  https://cf.eip.telegraph.co.uk/assets/election2017/allresults.json but it has weird seat names and no ONS_ID
+
+var oSeatRegions = JSON.parse(fs.readFileSync("seats_regions_2015.json"));
+
+console.log(aSeats[2]);
+
+aSeats.map(function(oSeat){
+    oSeat.region = false;
+    if(oSeatRegions[oSeat.ons]){
+        oSeat.region = oSeatRegions[oSeat.ons].region;
+            
+    }
+    
+    if(!oSeat.region){
+        console.log("Dont match",oSeat.name, ":");
+        //process.exit();
+    }
+    return oSeat;
+});
+
 
 var aRegions = {};
 
@@ -10,11 +31,11 @@ aSeats.forEach(function(oSeat){
         }
         aRegions[oSeat.region].seats ++;
         
-        oSeat.results.forEach(function(oCandiate){
-                if(typeof aRegions[oSeat.region].parties[oCandiate.partyname] === "undefined") {
-                    aRegions[oSeat.region].parties[oCandiate.partyname] = 0;
+        oSeat.candidates.forEach(function(oCandiate){
+                if(typeof aRegions[oSeat.region].parties[oCandiate.party] === "undefined") {
+                    aRegions[oSeat.region].parties[oCandiate.party] = 0;
                 }
-                aRegions[oSeat.region].parties[oCandiate.partyname] += oCandiate.votes;
+                aRegions[oSeat.region].parties[oCandiate.party] += oCandiate.votes;
                 //console.log("oCandiate =", oCandiate);
         });
         
@@ -82,7 +103,7 @@ console.log("aDHondt =", aDHondt);
 console.log("oNational =", oNational);
 
 function formatResult(sZone, oZone) {
-    var sOutput = "##"+sZone+"\n\n";
+    var sOutput = "## "+sZone+"\n\n";
     sOutput += "| Party | Seats |\n| ------------- |:------------- |\n";
     for (sParty in oZone) {
         sOutput += "| "+sParty+ "| "+oZone[sParty]+ " |\n";    
