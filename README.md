@@ -147,16 +147,16 @@ The output of those calculations is :
 
 | Party | Seats |
 | ------------- |:------------- |
-| Lab| 245 |
 | Con| 281 |
-| PC| 4 |
-| Lab Co-op| 23 |
+| Lab| 245 |
 | Lib Dem| 43 |
+| Lab Co-op| 23 |
 | SNP| 22 |
-| Green| 6 |
 | UKIP| 8 |
 | DUP| 7 |
+| Green| 6 |
 | SF| 6 |
+| PC| 4 |
 | SDLP| 2 |
 | UUP| 2 |
 | Alliance| 1 |

@@ -41,8 +41,6 @@ aSeats.forEach(function(oSeat){
         
 });
 
-
-
 //save aData to GE2015_results.json
 fs.writeFileSync("regions_results.json", JSON.stringify(aRegions));
 //console.log("aRegions =", aRegions);
@@ -105,9 +103,18 @@ console.log("oNational =", oNational);
 function formatResult(sZone, oZone) {
     var sOutput = "## "+sZone+"\n\n";
     sOutput += "| Party | Seats |\n| ------------- |:------------- |\n";
+    var aParties = [];
     for (sParty in oZone) {
-        sOutput += "| "+sParty+ "| "+oZone[sParty]+ " |\n";    
+        aParties.push({party:sParty, seats:oZone[sParty]});
+        //sOutput += "| "+sParty+ "| "+oZone[sParty]+ " |\n";    
     }
+    aParties.sort(function(a,b){
+        return b.seats - a.seats;
+    });
+    
+    aParties.forEach(function(oParty){
+        sOutput += "| "+oParty.party+ "| "+oParty.seats+ " |\n";
+    });
     sOutput += "\n\n";
     return sOutput;
 };
