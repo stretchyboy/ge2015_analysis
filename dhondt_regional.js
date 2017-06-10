@@ -5,8 +5,13 @@ var aSeats = JSON.parse(fs.readFileSync("GE2017_results_guardian.json"));
 
 var oSeatRegions = JSON.parse(fs.readFileSync("seats_regions_2015.json"));
 
+function normParty(sParty){
+    return sParty.replace(" Co-op","");
+}
+
 console.log(aSeats[2]);
 
+// Look up the region for every seat
 aSeats.map(function(oSeat){
     oSeat.region = false;
     if(oSeatRegions[oSeat.ons]){
@@ -15,48 +20,83 @@ aSeats.map(function(oSeat){
     }
     
     if(!oSeat.region){
-        console.log("Dont match",oSeat.name, ":");
-        //process.exit();
+        console.log(oSeat.name," : Not found in seats_regions_2015.json");
     }
     return oSeat;
 });
 
 
-var aRegions = {};
+var oRegions = {};
+var oNational = {seats:0, votes:0, "parties":{}};
 
 aSeats.forEach(function(oSeat){
         //console.log("oSeat =", oSeat);
-        if(typeof aRegions[oSeat.region] === "undefined") {
-            aRegions[oSeat.region] = {"seats":0, "parties":{}};
+        if(typeof oRegions[oSeat.region] === "undefined") {
+            oRegions[oSeat.region] = {"seats":0, "votes":0, "parties":{}};
         }
-        aRegions[oSeat.region].seats ++;
+        
+        oRegions[oSeat.region].seats ++;
+        oNational.seats ++;
+        var sNormParty = normParty(oSeat.winningParty);
+        
+        if(typeof oRegions[oSeat.region].parties[sNormParty] === "undefined") {
+            oRegions[oSeat.region].parties[sNormParty] = {
+                votes:0,
+                fptp:0,
+            };
+        }
+        oRegions[oSeat.region].parties[sNormParty].fptp ++;
+        
+        if(typeof oNational.parties[sNormParty] === "undefined") {
+            oNational.parties[sNormParty] = {
+                votes:0,
+                fptp:0,
+            };
+        }
+        oNational.parties[sNormParty].fptp ++;
         
         oSeat.candidates.forEach(function(oCandiate){
-                if(typeof aRegions[oSeat.region].parties[oCandiate.party] === "undefined") {
-                    aRegions[oSeat.region].parties[oCandiate.party] = 0;
-                }
-                aRegions[oSeat.region].parties[oCandiate.party] += oCandiate.votes;
-                //console.log("oCandiate =", oCandiate);
+            var sNormParty = normParty(oCandiate.party);
+        
+            if(typeof oRegions[oSeat.region].parties[sNormParty] === "undefined") {
+                oRegions[oSeat.region].parties[sNormParty] = {
+                    votes:0,
+                    fptp:0,
+                };
+            }
+            oRegions[oSeat.region].parties[sNormParty].votes += oCandiate.votes;
+            oRegions[oSeat.region].votes += oCandiate.votes;
+            
+            if(typeof oNational.parties[sNormParty] === "undefined") {
+                oNational.parties[sNormParty] = {
+                    votes:0,
+                    fptp:0,
+                };
+            }
+            oNational.parties[sNormParty].votes += oCandiate.votes;
+            oNational.votes += oCandiate.votes;
+            
+            //console.log("oCandiate =", oCandiate);
         });
         
 });
 
 //save aData to GE2015_results.json
-fs.writeFileSync("regions_results.json", JSON.stringify(aRegions));
-//console.log("aRegions =", aRegions);
+fs.writeFileSync("regions_results.json", JSON.stringify(oRegions));
+//console.log("oRegions =", oRegions);
 
 //dhondt-ing
-var aDHondt = {};
+var oDHondt = {};
 var iSeats = 0;
-var oNational = {};
+var oDHondtNational = {};
 
 
-for (var sRegion in aRegions) {
+for (var sRegion in oRegions) {
     var aDivided = [];
     
-    for (var i = 1; i <= aRegions[sRegion].seats; i++ ) {
-        for (var sParty in aRegions[sRegion].parties) {
-            aDivided.push({"party":sParty, "div": aRegions[sRegion].parties[sParty] / i});        
+    for (var i = 1; i <= oRegions[sRegion].seats; i++ ) {
+        for (var sParty in oRegions[sRegion].parties) {
+            aDivided.push({"party":sParty, "div": oRegions[sRegion].parties[sParty].votes / i});        
         };
     }
     aDivided.sort(function compare(a, b) {
@@ -69,43 +109,53 @@ for (var sRegion in aRegions) {
         // a must be equal to b
         return 0;
     });
-    var aDivided2 = aDivided.slice(0, aRegions[sRegion].seats);
+    var aDivided2 = aDivided.slice(0, oRegions[sRegion].seats);
     //console.log("aDivided2 =", aDivided2);
     
-    var aDHondtRegion = {};
+    var oDHondtRegion = {};
     
     
     aDivided2.forEach(function(oItem){
-        //console.log("oSeat =", oSeat);
-        if(typeof aDHondtRegion[oItem.party] === "undefined") {
-            aDHondtRegion[oItem.party] = 0;
+        //console.log("oItem =", oItem);
+        if(typeof oDHondtRegion[oItem.party] === "undefined") {
+            oDHondtRegion[oItem.party] = 0;
         }
-        aDHondtRegion[oItem.party] ++;
+        oDHondtRegion[oItem.party] ++;
         iSeats ++;
 
-        if(typeof oNational[oItem.party] === "undefined") {
-            oNational[oItem.party] = 0;
+        if(typeof oDHondtNational[oItem.party] === "undefined") {
+            oDHondtNational[oItem.party] = 0;
         }
-        oNational[oItem.party] ++;
+        oDHondtNational[oItem.party] ++;
     });
     
     //console.log("aDHondtRegion =", aDHondtRegion);
-    aDHondt[sRegion] = aDHondtRegion;   
+    
+    oDHondt[sRegion] = oDHondtRegion;   
 };
 
-fs.writeFileSync("dhondt_results_regions.json", JSON.stringify(aDHondt));
+fs.writeFileSync("dhondt_results_regions.json", JSON.stringify(oDHondt));
 
-fs.writeFileSync("dhondt_results_totals.json", JSON.stringify(oNational));
+fs.writeFileSync("dhondt_results_totals.json", JSON.stringify(oDHondtNational));
 
-console.log("aDHondt =", aDHondt);  
-console.log("oNational =", oNational);
+console.log("aDHondt =", oDHondt);  
+console.log("oDHondtNational =", oDHondtNational);
 
-function formatResult(sZone, oZone) {
+function formatResult(sZone, oDHZone, oZone) {
+    console.log(oZone);
     var sOutput = "## "+sZone+"\n\n";
-    sOutput += "| Party | Seats |\n| ------------- |:------------- |\n";
+    sOutput += "| Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |\n| ------------- |:------------- |:------------- ||:------------- ||:------------- |\n";
     var aParties = [];
-    for (sParty in oZone) {
-        aParties.push({party:sParty, seats:oZone[sParty]});
+    for (sParty in oDHZone) {
+        aParties.push({
+            party:sParty, 
+            seats:oDHZone[sParty], 
+            //votes:oZone.parties[sParty].votes,
+            mpsperseat:Math.round(oZone.parties[sParty].votes / oDHZone[sParty]),
+            fptpseats: oZone.parties[sParty].fptp,
+            fptpmpsperseat:Math.round(oZone.parties[sParty].votes / oZone.parties[sParty].fptp),
+            
+        });
         //sOutput += "| "+sParty+ "| "+oZone[sParty]+ " |\n";    
     }
     aParties.sort(function(a,b){
@@ -113,18 +163,22 @@ function formatResult(sZone, oZone) {
     });
     
     aParties.forEach(function(oParty){
-        sOutput += "| "+oParty.party+ "| "+oParty.seats+ " |\n";
+        //sOutput += "| "+oParty.party+ "| "+oParty.seats+ " |\n";
+        for(var sFieldName in oParty){
+            sOutput += "| "+oParty[sFieldName];
+        }
+        sOutput += " |\n";
     });
     sOutput += "\n\n";
     return sOutput;
 };
 
 var sMD = fs.readFileSync("readme_top.md")
-for (var sRegion in aDHondt) {
-    sMD += formatResult(sRegion, aDHondt[sRegion]);
+for (var sRegion in oDHondt) {
+    sMD += formatResult(sRegion, oDHondt[sRegion], oRegions[sRegion]);
 }
 
-sMD += formatResult("Totals", oNational);
+sMD += formatResult("Totals", oDHondtNational, oNational);
 
 
 fs.writeFileSync("README.md", sMD);
