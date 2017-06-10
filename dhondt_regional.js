@@ -144,7 +144,7 @@ console.log("oDHondtNational =", oDHondtNational);
 function formatResult(sZone, oDHZone, oZone) {
     console.log(oZone);
     var sOutput = "## "+sZone+"\n\n";
-    sOutput += "| Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |\n| ------------- |:------------- |:------------- ||:------------- ||:------------- |\n";
+    sOutput += "| Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |\n| ------------- |:------------- |:------------- |:------------- |:------------- |\n";
     var aParties = [];
     for (sParty in oDHZone) {
         aParties.push({
