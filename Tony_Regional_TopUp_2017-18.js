@@ -1,5 +1,7 @@
 var fs = require('fs');
 
+// TODO : Change to seat by seat data for 2018 and then exclude winning votes.
+//TODO : Regions targetseats are multplied up from 2018 seats should be be on populatation proportions
 var oRegions = JSON.parse(fs.readFileSync("regions_2017-18_results_transition.json","utf8"));
 var oNational = {targetseats:650, seats:0, fptp:0, votes:0, "parties":{}};
 
@@ -7,26 +9,15 @@ var oNational = {targetseats:650, seats:0, fptp:0, votes:0, "parties":{}};
 var oDHondt = {};
 var iSeats = 0;
 var oDHondtRegionsTotals = {};
-
+var bExcludeWinningVotes = true;
 function DhontZone(oZone){
-    //console.log(oZone);
-    //process.exit();
     var aDivided = [];
-    //TODO : Instead of filtering out maybe we should loop around the parties and only add them to div if they have got that seat at that region at that level already
-    
+    //TODO : Loop around the parties and only add them to division array if they have not got that seat at that region at that level already (so if they got 50 seats by FPTP start at putting their 51st divisor in the list)
     for (var sParty in oZone.parties) {
-        
         for (var i = oZone.parties[sParty].seats+1; i <= oZone.targetseats; i++ ) {
             aDivided.push({"party":sParty, "div": oZone.parties[sParty].votes / i});        
         }
     }
-    
-    
-    /*for (var i = 1; i <= oZone.targetseats; i++ ) {
-        for (var sParty in oZone.parties) {
-            aDivided.push({"party":sParty, "div": oZone.parties[sParty].votes / i});        
-        }
-    }*/
     
     aDivided.sort(function compare(a, b) {
         if (a.div < b.div) {
@@ -39,17 +30,8 @@ function DhontZone(oZone){
         return 0;
     });
     
-    //logic problem here
-    var aDivided2 = aDivided/*.filter(function(oDiv){
-        if(oZone.parties[oDiv.party].seats < oZone.parties[oDiv.party].fptp){
-            oZone.parties[oDiv.party].seats ++;
-            return false;
-        }
-        return true; //oZone.parties[oDiv.party].seats >= oZone.parties[oDiv.party].fptp;
-    });
-    */
     var aDivided3 = aDivided.slice(0, oZone.targetseats - oZone.fptp);
-    console.log("aDivided =", aDivided.length, "aDivided2 =", aDivided2.length,"aDivided3 =", aDivided3.length);
+    //console.log("aDivided =", aDivided.length, "aDivided3 =", aDivided3.length);
     
     var oDHondtZone = {};
     
@@ -109,9 +91,8 @@ function formatResult(sZone, oDHZone, oZone) {
 };
 
 for (var sRegion in oRegions) {
-    var aDivided = [];
-    
     for (var sParty in oRegions[sRegion].parties) {
+
         if(typeof oNational.parties[sParty] === "undefined") {
             oNational.parties[sParty] = {
                 seats:0,
@@ -121,8 +102,12 @@ for (var sRegion in oRegions) {
         }
         
         oRegions[sRegion].parties[sParty].seats = oRegions[sRegion].parties[sParty].fptp;
+        // TODO : Change to seat by seat data for 2018 and then exclude winning votes.
+        //if(bExcludeWinningVotes && sParty == )
+        if(sParty != "Ind"){
+            oNational.parties[sParty].votes += oRegions[sRegion].parties[sParty].votes;
+        }
         
-        oNational.parties[sParty].votes += oRegions[sRegion].parties[sParty].votes;
         oNational.parties[sParty].fptp += oRegions[sRegion].parties[sParty].fptp;
         oNational.parties[sParty].seats += oRegions[sRegion].parties[sParty].seats;
         
@@ -145,7 +130,7 @@ for (var sRegion in oRegions) {
 
 
 
-var sMD = fs.readFileSync("readme_2017-18_top.md")
+var sMD = fs.readFileSync("readme_Tony_2017-18_top.md")
 for (var sRegion in oDHondt) {
     sMD += formatResult(sRegion, oDHondt[sRegion], oRegions[sRegion]);
 }
@@ -158,6 +143,6 @@ sMD += formatResult("National Top Up", oDHondtNatTopUp, oNational);
     
 console.log(oNational);
 
-fs.writeFileSync("README_2017-18.md", sMD);
+fs.writeFileSync("README_Tony_2017-18.md", sMD);
 //console.log("sMD =", sMD);
 

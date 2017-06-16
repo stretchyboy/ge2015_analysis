@@ -9,6 +9,8 @@ Tony Kennick suggested that we should see if returning to the 650 MPs we current
 
 The D'Hondt algorithm was tweaked to start from the projected FPTP results based on the UK General Election Results June 2017.
 
+Must be noted that Independt Candidates by definition don't have a party so there votes have been zeroes so they don't leak out in to the dhont pool.
+
 I have done this based both on topping up each region speratly (the top up seat where destributed based on the proportion of 2018 seats), and at a National Level (Tony_TopUp_2017-18.js)
 
 
