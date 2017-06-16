@@ -5,19 +5,13 @@ they have modelled the 2017 election results using the new proposed seats from t
 
 So far these changes seem to renforce the issues with FPTP reducing the spectrum of MPs.
 
-Tony Kennick suggested that we should see if returning to the 650 MPs we currently have using a top up list to fill those 50 seats.
+Tony Kennick suggested that we should see if returning to the 650 MPs we currently have using a top-up list to fill those 50 seats.
 
 The D'Hondt algorithm was tweaked to start from the projected FPTP results based on the UK General Election Results June 2017.
 
-Firstly I did this a om Regional Top Up basis but that still under represnted minor  parties vastly. (dhondt_regional_2017-18.js)
+I have done this based both on topping up each region speratly (the top up seat where destributed based on the proportion of 2018 seats), and at a National Level (Tony_TopUp_2017-18.js)
 
 
-
-GE2015_results.json - contains all the seats in the UK, the region they are in and the valid votes for each candidate.
-
-The code is ugly but I did it in one go in 2015 and wasn't expecting to use it again so soon (be kind).
-
-The output of those calculations is :
 
 
 ## Wales
@@ -294,7 +288,7 @@ The output of those calculations is :
 | UKIP| 593852| 3| 197951| 3| 0| Infinity |
 | PC| 164466| 2| 82233| 1| 1| 164466 |
 | Green| 525371| 2| 262686| 2| 0| Infinity |
-| Ind| 145375| 1| 145375| 0| 1| 145375 |
+| Ind| 0| 1| 0| 0| 1| 0 |
 | SDLP| 95419| 1| 95419| 1| 0| Infinity |
 | SPGB| 145| 0| Infinity| 0| 0| Infinity |
 | Women| 3580| 0| Infinity| 0| 0| Infinity |
@@ -369,11 +363,11 @@ The output of those calculations is :
 | SF| 238915| 9| 26546| 0| 9| 26546 |
 | Green| 525371| 8| 65671| 8| 0| Infinity |
 | DUP| 292316| 7| 41759| 0| 7| 41759 |
-| Ind| 145375| 2| 72688| 1| 1| 145375 |
 | PC| 164466| 2| 82233| 1| 1| 164466 |
+| Ind| 0| 1| 0| 0| 1| 0 |
+| Alliance| 64553| 1| 64553| 1| 0| Infinity |
 | UUP| 83280| 1| 83280| 1| 0| Infinity |
 | SDLP| 95419| 1| 95419| 1| 0| Infinity |
-| Women| 3580| 0| Infinity| 0| 0| Infinity |
 | North| 353| 0| Infinity| 0| 0| Infinity |
 | Referendum| 132| 0| Infinity| 0| 0| Infinity |
 | Sovereign| 224| 0| Infinity| 0| 0| Infinity |
@@ -405,10 +399,10 @@ The output of those calculations is :
 | Humanity| 282| 0| Infinity| 0| 0| Infinity |
 | Elvis| 195| 0| Infinity| 0| 0| Infinity |
 | Loony| 3890| 0| Infinity| 0| 0| Infinity |
-| Alliance| 64553| 0| Infinity| 0| 0| Infinity |
 | ND| 11890| 0| Infinity| 0| 0| Infinity |
 | Worth| 31| 0| Infinity| 0| 0| Infinity |
 | SPGB| 145| 0| Infinity| 0| 0| Infinity |
+| Women| 3580| 0| Infinity| 0| 0| Infinity |
 | TUV| 3282| 0| Infinity| 0| 0| Infinity |
 | WP| 708| 0| Infinity| 0| 0| Infinity |
 | PBP| 5509| 0| Infinity| 0| 0| Infinity |
