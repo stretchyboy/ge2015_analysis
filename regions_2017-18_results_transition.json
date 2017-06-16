@@ -1,0 +1,854 @@
+{
+    "Wales": {
+        "region": "Wales",
+        "targetseats": 32,
+        "fptp": 29,
+        "votes": 1575814,
+        "parties": {
+            "Lab": {
+                "votes": 771354,
+                "fptp": 22
+            },
+            "Con": {
+                "votes": 528839,
+                "fptp": 6
+            },
+            "PC": {
+                "votes": 164466,
+                "fptp": 1
+            },
+            "UKIP": {
+                "votes": 31376,
+                "fptp": 0
+            },
+            "Lib Dem": {
+                "votes": 71039,
+                "fptp": 0
+            },
+            "Ind": {
+                "votes": 2521,
+                "fptp": 0
+            },
+            "Green": {
+                "votes": 5128,
+                "fptp": 0
+            },
+            "Pirate": {
+                "votes": 446,
+                "fptp": 0
+            },
+            "Loony": {
+                "votes": 157,
+                "fptp": 0
+            },
+            "ND": {
+                "votes": 188,
+                "fptp": 0
+            },
+            "Worth": {
+                "votes": 31,
+                "fptp": 0
+            },
+            "SPGB": {
+                "votes": 92,
+                "fptp": 0
+            },
+            "Women": {
+                "votes": 177,
+                "fptp": 0
+            }
+        }
+    },
+    "Scotland": {
+        "region": "Scotland",
+        "targetseats": 57,
+        "fptp": 53,
+        "votes": 2649694,
+        "parties": {
+            "SNP": {
+                "votes": 977568,
+                "fptp": 32
+            },
+            "Lab": {
+                "votes": 717007,
+                "fptp": 8
+            },
+            "Con": {
+                "votes": 757949,
+                "fptp": 11
+            },
+            "Lib Dem": {
+                "votes": 179061,
+                "fptp": 2
+            },
+            "Ind": {
+                "votes": 3645,
+                "fptp": 0
+            },
+            "UKIP": {
+                "votes": 5302,
+                "fptp": 0
+            },
+            "ND": {
+                "votes": 538,
+                "fptp": 0
+            },
+            "Green": {
+                "votes": 5886,
+                "fptp": 0
+            },
+            "Referendum": {
+                "votes": 132,
+                "fptp": 0
+            },
+            "Sovereign": {
+                "votes": 224,
+                "fptp": 0
+            },
+            "Soc Dem": {
+                "votes": 148,
+                "fptp": 0
+            },
+            "SCP": {
+                "votes": 1720,
+                "fptp": 0
+            },
+            "S New": {
+                "votes": 177,
+                "fptp": 0
+            },
+            "Women": {
+                "votes": 337,
+                "fptp": 0
+            }
+        }
+    },
+    "South East": {
+        "region": "South East",
+        "targetseats": 90,
+        "fptp": 83,
+        "votes": 4635741,
+        "parties": {
+            "Con": {
+                "votes": 2495275,
+                "fptp": 74
+            },
+            "Lab": {
+                "votes": 1326279,
+                "fptp": 8
+            },
+            "Lib Dem": {
+                "votes": 487243,
+                "fptp": 1
+            },
+            "UKIP": {
+                "votes": 104509,
+                "fptp": 0
+            },
+            "Green": {
+                "votes": 143863,
+                "fptp": 0
+            },
+            "Ind": {
+                "votes": 23315,
+                "fptp": 0
+            },
+            "Libertarian": {
+                "votes": 343,
+                "fptp": 0
+            },
+            "ND": {
+                "votes": 521,
+                "fptp": 0
+            },
+            "CPA": {
+                "votes": 1031,
+                "fptp": 0
+            },
+            "Patria": {
+                "votes": 84,
+                "fptp": 0
+            },
+            "Loony": {
+                "votes": 1304,
+                "fptp": 0
+            },
+            "Peace": {
+                "votes": 468,
+                "fptp": 0
+            },
+            "JACP": {
+                "votes": 991,
+                "fptp": 0
+            },
+            "Radical": {
+                "votes": 392,
+                "fptp": 0
+            },
+            "S New": {
+                "votes": 375,
+                "fptp": 0
+            },
+            "AWP": {
+                "votes": 282,
+                "fptp": 0
+            },
+            "Just": {
+                "votes": 52,
+                "fptp": 0
+            },
+            "Pirate": {
+                "votes": 483,
+                "fptp": 0
+            },
+            "AD": {
+                "votes": 304,
+                "fptp": 0
+            },
+            "Active Dem": {
+                "votes": 142,
+                "fptp": 0
+            },
+            "Southampton": {
+                "votes": 816,
+                "fptp": 0
+            },
+            "NHAP": {
+                "votes": 12668,
+                "fptp": 0
+            },
+            "Women": {
+                "votes": 702,
+                "fptp": 0
+            }
+        }
+    },
+    "West Midlands": {
+        "region": "West Midlands",
+        "targetseats": 57,
+        "fptp": 53,
+        "votes": 2765212,
+        "parties": {
+            "Con": {
+                "votes": 1355486,
+                "fptp": 31
+            },
+            "Lab": {
+                "votes": 1175085,
+                "fptp": 22
+            },
+            "Lib Dem": {
+                "votes": 122287,
+                "fptp": 0
+            },
+            "Loony": {
+                "votes": 565,
+                "fptp": 0
+            },
+            "Green": {
+                "votes": 46347,
+                "fptp": 0
+            },
+            "Good": {
+                "votes": 155,
+                "fptp": 0
+            },
+            "UKIP": {
+                "votes": 50106,
+                "fptp": 0
+            },
+            "Soc Lab": {
+                "votes": 592,
+                "fptp": 0
+            },
+            "Open": {
+                "votes": 99,
+                "fptp": 0
+            },
+            "Ind": {
+                "votes": 10207,
+                "fptp": 0
+            },
+            "NHAP": {
+                "votes": 2239,
+                "fptp": 0
+            },
+            "ND": {
+                "votes": 2006,
+                "fptp": 0
+            },
+            "Compass": {
+                "votes": 38,
+                "fptp": 0
+            }
+        }
+    },
+    "North West": {
+        "region": "North West",
+        "targetseats": 74,
+        "fptp": 68,
+        "votes": 3595503,
+        "parties": {
+            "Con": {
+                "votes":1301562,
+                "fptp": 18
+            },
+            "Lab": {
+                "votes": 1972632,
+                "fptp": 50
+            },
+            "Lib Dem": {
+                "votes": 193053,
+                "fptp": 0
+            },
+            "Green": {
+                "votes": 39608,
+                "fptp": 0
+            },
+            "Lib": {
+                "votes": 2449,
+                "fptp": 0
+            },
+            "UKIP": {
+                "votes": 68946,
+                "fptp": 0
+            },
+            "Ind": {
+                "votes": 12782,
+                "fptp": 0
+            },
+            "CPA": {
+                "votes": 529,
+                "fptp": 0
+            },
+            "Soc Lab": {
+                "votes": 424,
+                "fptp": 0
+            },
+            "Loony": {
+                "votes": 217,
+                "fptp": 0
+            },
+            "Pirate": {
+                "votes": 371,
+                "fptp": 0
+            },
+            "WVPTFP": {
+                "votes": 269,
+                "fptp": 0
+            },
+            "ND": {
+                "votes": 1099,
+                "fptp": 0
+            },
+            "Comm Lge": {
+                "votes": 27,
+                "fptp": 0
+            },
+            "Women": {
+                "votes": 234,
+                "fptp": 0
+            },
+            "BNP": {
+                "votes": 718,
+                "fptp": 0
+            },
+            "GM Homeless": {
+                "votes": 242,
+                "fptp": 0
+            },
+            "NHAP": {
+                "votes": 341,
+                "fptp": 0
+            }
+        }
+    },
+    "East Midlands": {
+        "region": "East Midlands",
+        "targetseats": 48,
+        "fptp": 44,
+        "votes": 2357459,
+        "parties": {
+            "Con": {
+                "votes": 1195983,
+                "fptp": 32
+            },
+            "Lab": {
+                "votes": 954635,
+                "fptp": 12
+            },
+            "Lib Dem": {
+                "votes": 101612,
+                "fptp": 0
+            },
+            "Green": {
+                "votes": 34355,
+                "fptp": 0
+            },
+            "Ind": {
+                "votes": 12938,
+                "fptp": 0
+            },
+            "UKIP": {
+                "votes": 56358,
+                "fptp": 0
+            },
+            "Blue": {
+                "votes": 283,
+                "fptp": 0
+            },
+            "BNP": {
+                "votes": 322,
+                "fptp": 0
+            },
+            "Humanity": {
+                "votes": 282,
+                "fptp": 0
+            },
+            "Loony": {
+                "votes": 496,
+                "fptp": 0
+            },
+            "Elvis": {
+                "votes": 195,
+                "fptp": 0
+            }
+        }
+    },
+    "Northern Ireland": {
+        "region": "Northern Ireland",
+        "targetseats": 18,
+        "fptp": 17,
+        "votes": 812183,
+        "parties": {
+            "DUP": {
+                "votes": 292316,
+                "fptp": 7
+            },
+            "Alliance": {
+                "votes": 64553,
+                "fptp": 0
+            },
+            "UUP": {
+                "votes": 83280,
+                "fptp": 0
+            },
+            "SF": {
+                "votes": 238915,
+                "fptp": 9
+            },
+            "SDLP": {
+                "votes": 95419,
+                "fptp": 0
+            },
+            "Con": {
+                "votes": 3895,
+                "fptp": 0
+            },
+            "TUV": {
+                "votes": 3282,
+                "fptp": 0
+            },
+            "Green": {
+                "votes": 7452,
+                "fptp": 0
+            },
+            "Ind": {
+                "votes": 16239,
+                "fptp": 1
+            },
+            "WP": {
+                "votes": 708,
+                "fptp": 0
+            },
+            "PBP": {
+                "votes": 5509,
+                "fptp": 0
+            },
+            "ND": {
+                "votes": 222,
+                "fptp": 0
+            },
+            "Citizens": {
+                "votes": 393,
+                "fptp": 0
+            }
+        }
+    },
+    "London": {
+        "region": "London",
+        "targetseats": 74,
+        "fptp": 68,
+        "votes": 3828560,
+        "parties": {
+            "Lab": {
+                "votes": 2086595,
+                "fptp": 50
+            },
+            "Con": {
+                "votes": 1268800,
+                "fptp": 16
+            },
+            "UKIP": {
+                "votes": 49369,
+                "fptp": 0
+            },
+            "Green": {
+                "votes": 67561,
+                "fptp": 0
+            },
+            "Lib Dem": {
+                "votes": 336725,
+                "fptp": 2
+            },
+            "Ind": {
+                "votes": 10493,
+                "fptp": 0
+            },
+            "SPGB": {
+                "votes": 53,
+                "fptp": 0
+            },
+            "BNP": {
+                "votes": 1971,
+                "fptp": 0
+            },
+            "CPA": {
+                "votes": 2719,
+                "fptp": 0
+            },
+            "WRP": {
+                "votes": 634,
+                "fptp": 0
+            },
+            "ND": {
+                "votes": 608,
+                "fptp": 0
+            },
+            "Young": {
+                "votes": 43,
+                "fptp": 0
+            },
+            "Concordia": {
+                "votes": 85,
+                "fptp": 0
+            },
+            "Friends": {
+                "votes": 435,
+                "fptp": 0
+            },
+            "AWP": {
+                "votes": 673,
+                "fptp": 0
+            },
+            "Eng Dem": {
+                "votes": 93,
+                "fptp": 0
+            },
+            "Women": {
+                "votes": 1090,
+                "fptp": 0
+            },
+            "Loony": {
+                "votes": 274,
+                "fptp": 0
+            },
+            "Comm Lge": {
+                "votes": 7,
+                "fptp": 0
+            },
+            "Green Soc": {
+                "votes": 49,
+                "fptp": 0
+            },
+            "Realist": {
+                "votes": 61,
+                "fptp": 0
+            },
+            "Populist": {
+                "votes": 50,
+                "fptp": 0
+            },
+            "Pirate": {
+                "votes": 172,
+                "fptp": 0
+            }
+        }
+    },
+    "Yorkshire and The Humber": {
+        "region": "Yorkshire and The Humber",
+        "targetseats": 54,
+        "fptp": 50,
+        "votes": 2605919,
+        "parties": {
+            "Lab": {
+                "votes": 1276862,
+                "fptp": 35
+            },
+            "Con": {
+                "votes": 1054099,
+                "fptp": 15
+            },
+            "UKIP": {
+                "votes": 67801,
+                "fptp": 0
+            },
+            "Green": {
+                "votes": 32743,
+                "fptp": 0
+            },
+            "Lib Dem": {
+                "votes": 129687,
+                "fptp": 0
+            },
+            "Eng Dem": {
+                "votes": 1238,
+                "fptp": 0
+            },
+            "Yorkshire": {
+                "votes": 20958,
+                "fptp": 0
+            },
+            "Ind": {
+                "votes": 12905,
+                "fptp": 0
+            },
+            "Bradford": {
+                "votes": 420,
+                "fptp": 0
+            },
+            "ND": {
+                "votes": 6410,
+                "fptp": 0
+            },
+            "Libertarian": {
+                "votes": 67,
+                "fptp": 0
+            },
+            "CPA": {
+                "votes": 224,
+                "fptp": 0
+            },
+            "Green Soc": {
+                "votes": 163,
+                "fptp": 0
+            },
+            "WRP": {
+                "votes": 137,
+                "fptp": 0
+            },
+            "Soc Dem": {
+                "votes": 321,
+                "fptp": 0
+            },
+            "Pirate": {
+                "votes": 91,
+                "fptp": 0
+            },
+            "Women": {
+                "votes": 1040,
+                "fptp": 0
+            },
+            "Lib": {
+                "votes": 753,
+                "fptp": 0
+            }
+        }
+    },
+    "Eastern": {
+        "region": "Eastern",
+        "targetseats": 62,
+        "fptp": 57,
+        "votes": 3094321,
+        "parties": {
+            "Con": {
+                "votes": 1690813,
+                "fptp": 47
+            },
+            "Lab": {
+                "votes": 1012359,
+                "fptp": 9
+            },
+            "UKIP": {
+                "votes": 77793,
+                "fptp": 0
+            },
+            "Lib Dem": {
+                "votes": 244064,
+                "fptp": 1
+            },
+            "Green": {
+                "votes": 58704,
+                "fptp": 0
+            },
+            "BNP": {
+                "votes": 640,
+                "fptp": 0
+            },
+            "Loony": {
+                "votes": 667,
+                "fptp": 0
+            },
+            "CPA": {
+                "votes": 861,
+                "fptp": 0
+            },
+            "Ind": {
+                "votes": 6950,
+                "fptp": 0
+            },
+            "Rebooting": {
+                "votes": 133,
+                "fptp": 0
+            },
+            "Eng Dem": {
+                "votes": 582,
+                "fptp": 0
+            },
+            "Young": {
+                "votes": 110,
+                "fptp": 0
+            },
+            "Pirate": {
+                "votes": 340,
+                "fptp": 0
+            },
+            "Southend": {
+                "votes": 305,
+                "fptp": 0
+            }
+        }
+    },
+    "South West": {
+        "region": "South West",
+        "targetseats": 57,
+        "fptp": 53,
+        "votes": 2995752,
+        "parties": {
+            "Lib Dem": {
+                "votes": 448582,
+                "fptp": 1
+            },
+            "Con": {
+                "votes": 1539618,
+                "fptp": 45
+            },
+            "Lab": {
+                "votes": 871738,
+                "fptp": 7
+            },
+            "Green": {
+                "votes": 67644,
+                "fptp": 0
+            },
+            "UKIP": {
+                "votes": 32944,
+                "fptp": 0
+            },
+            "Ind": {
+                "votes": 31565,
+                "fptp": 0
+            },
+            "Pirate": {
+                "votes": 418,
+                "fptp": 0
+            },
+            "Money": {
+                "votes": 101,
+                "fptp": 0
+            },
+            "CPA": {
+                "votes": 505,
+                "fptp": 0
+            },
+            "Soc Lab": {
+                "votes": 138,
+                "fptp": 0
+            },
+            "ND": {
+                "votes": 174,
+                "fptp": 0
+            },
+            "Wessex Reg": {
+                "votes": 223,
+                "fptp": 0
+            },
+            "NHAP": {
+                "votes": 871,
+                "fptp": 0
+            },
+            "Lib": {
+                "votes": 470,
+                "fptp": 0
+            },
+            "Loony": {
+                "votes": 210,
+                "fptp": 0
+            },
+            "DDI": {
+                "votes": 551,
+                "fptp": 0
+            }
+        }
+    },
+    "North East": {
+        "region": "North East",
+        "targetseats": 27,
+        "fptp": 25,
+        "votes": 1280066,
+        "parties": {
+            "Con": {
+                "votes": 440613,
+                "fptp": 3
+            },
+            "Lab": {
+                "votes": 709738,
+                "fptp": 22
+            },
+            "Lib Dem": {
+                "votes": 58409,
+                "fptp": 0
+            },
+            "Green": {
+                "votes": 16080,
+                "fptp": 0
+            },
+            "BNP": {
+                "votes": 991,
+                "fptp": 0
+            },
+            "UKIP": {
+                "votes": 49348,
+                "fptp": 0
+            },
+            "Libertarian": {
+                "votes": 114,
+                "fptp": 0
+            },
+            "Space": {
+                "votes": 81,
+                "fptp": 0
+            },
+            "Ind": {
+                "votes": 1815,
+                "fptp": 0
+            },
+            "Young": {
+                "votes": 45,
+                "fptp": 0
+            },
+            "NE Party": {
+                "votes": 2355,
+                "fptp": 0
+            },
+            "North": {
+                "votes": 353,
+                "fptp": 0
+            },
+            "ND": {
+                "votes": 124,
+                "fptp": 0
+            }
+        }
+    }
+}
