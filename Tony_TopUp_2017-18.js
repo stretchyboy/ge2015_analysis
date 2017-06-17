@@ -116,7 +116,7 @@ for (var sRegion in oRegions) {
         oNational.fptp += oRegions[sRegion].parties[sParty].fptp;
         oNational.seats += oRegions[sRegion].parties[sParty].seats;
     }
-    console.log(sRegion);
+    //console.log(sRegion);
     oDHondt[sRegion] = DhontZone(oRegions[sRegion]);
        
 };
@@ -141,8 +141,8 @@ sMD += formatResult("Regional Top Up Totals", oDHondtRegionsTotals, oNational);
 var oDHondtNatTopUp = DhontZone(oNational);
 sMD += formatResult("National Top Up", oDHondtNatTopUp, oNational);
     
-console.log(oNational);
+//console.log(oNational);
 
 fs.writeFileSync("README_Tony_2017-18.md", sMD);
 //console.log("sMD =", sMD);
-
+console.log("Done");
