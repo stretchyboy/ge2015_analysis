@@ -1,154 +1,151 @@
-# UK General Election 2017 Analysis
-D'Hondt Proportional Representation interpretation of the UK General Election Results June 2017
+# UK General Election 2019 Analysis
+D'Hondt Proportional Representation interpretation of the UK General Election Results December 2019
 
-GE2015_results.json - contains all the seats in the UK, the region they are in and the valid votes for each candidate.
+The data - contains all the seats in the UK, the region they are in and the valid votes for each candidate.
 
-dhondt_regional.js - Uses the D'Hondt method ( https://en.wikipedia.org/wiki/D%27Hondt_method ) to assign the currently existing number of seats in each (Government Office) region.
+dhondt_regional.js - Uses the D'Hondt method ( https://en.wikipedia.org/wiki/D%27Hondt_method ) to assign the currently existing number of seats in each (Government Office) region. This seems more appropriate than just doing it across the whole UK as a whole as it gives regional representation.
 
-The code is ugly but I did it in one go in 2015 and wasn't expecting to use it again so soon (be kind).
+The code is ugly but I did it in one go in 2015 and wasn't expecting to use it again so often (be kind).
 
 The output of those calculations is :
-
-
 ## Wales
 
 | Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
-| ------------- |:------------- |:------------- |:------------- |:------------- |
-| Lab| 21| 36731| 28| 27548 |
-| Con| 14| 37774| 8| 66105 |
-| PC| 4| 41117| 4| 41117 |
-| Lib Dem| 1| 71039| 0| Infinity |
+| ------------- | -------------:| -------------:| -------------:|-------------:|
+| Lab| 17| 37179| 22| 28729 |
+| Con| 15| 37149| 14| 39802 |
+| PC| 4| 38316| 4| 38316 |
+| Lib Dem| 2| 46086| 0| Infinity |
+| Brexit| 2| 41954| 0| Infinity |
 
 
 ## Scotland
 
 | Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
-| ------------- |:------------- |:------------- |:------------- |:------------- |
-| SNP| 22| 44435| 35| 27931 |
-| Con| 17| 44585| 13| 58304 |
-| Lab| 16| 44813| 7| 102430 |
-| Lib Dem| 4| 44765| 4| 44765 |
+| ------------- | -------------:| -------------:| -------------:|-------------:|
+| SNP| 28| 44370| 48| 25883 |
+| Con| 15| 46196| 6| 115490 |
+| Lab| 11| 46531| 1| 511838 |
+| Lib Dem| 5| 52683| 4| 65854 |
 
 
 ## South East
 
 | Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
-| ------------- |:------------- |:------------- |:------------- |:------------- |
-| Con| 47| 53091| 72| 34657 |
-| Lab| 25| 53051| 8| 165785 |
-| Lib Dem| 9| 54138| 2| 243622 |
-| Green| 2| 71932| 1| 143863 |
-| UKIP| 1| 104509| 0| Infinity |
+| ------------- | -------------:| -------------:| -------------:|-------------:|
+| Con| 47| 53465| 74| 33958 |
+| Lab| 19| 54210| 8| 128750 |
+| Lib Dem| 15| 56559| 1| 848381 |
+| Green| 3| 61241| 1| 183724 |
 
 
 ## West Midlands
 
 | Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
-| ------------- |:------------- |:------------- |:------------- |:------------- |
-| Con| 29| 46741| 35| 38728 |
-| Lab| 26| 45196| 24| 48962 |
-| Lib Dem| 2| 61144| 0| Infinity |
-| UKIP| 1| 50106| 0| Infinity |
-| Green| 1| 46347| 0| Infinity |
+| ------------- | -------------:| -------------:| -------------:|-------------:|
+| Con| 33| 43918| 44| 32938 |
+| Lab| 21| 43720| 15| 61208 |
+| Lib Dem| 4| 53476| 0| Infinity |
+| Green| 1| 80556| 0| Infinity |
 
 
 ## North West
 
 | Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
-| ------------- |:------------- |:------------- |:------------- |:------------- |
-| Lab| 42| 46967| 54| 36530 |
-| Con| 28| 46484| 20| 65078 |
-| Lib Dem| 4| 48263| 1| 193053 |
-| UKIP| 1| 68946| 0| Infinity |
+| ------------- | -------------:| -------------:| -------------:|-------------:|
+| Lab| 36| 45507| 41| 39958 |
+| Con| 29| 45558| 32| 41287 |
+| Lib Dem| 6| 46251| 1| 277505 |
+| Brexit| 3| 45392| 0| Infinity |
+| Green| 1| 86815| 0| Infinity |
 
 
 ## East Midlands
 
 | Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
-| ------------- |:------------- |:------------- |:------------- |:------------- |
-| Con| 24| 49833| 31| 38580 |
-| Lab| 19| 50244| 15| 63642 |
-| Lib Dem| 2| 50806| 0| Infinity |
-| UKIP| 1| 56358| 0| Infinity |
+| ------------- | -------------:| -------------:| -------------:|-------------:|
+| Con| 27| 47434| 38| 33703 |
+| Lab| 15| 49396| 8| 92618 |
+| Lib Dem| 3| 60888| 0| Infinity |
+| Green| 1| 60067| 0| Infinity |
 
 
 ## Northern Ireland
 
 | Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
-| ------------- |:------------- |:------------- |:------------- |:------------- |
-| DUP| 7| 41759| 10| 29232 |
-| SF| 6| 39819| 7| 34131 |
-| SDLP| 2| 47710| 0| Infinity |
-| UUP| 2| 41640| 0| Infinity |
-| Alliance| 1| 64553| 0| Infinity |
+| ------------- | -------------:| -------------:| -------------:|-------------:|
+| DUP| 6| 40688| 8| 30516 |
+| SF| 4| 45463| 7| 25979 |
+| Alliance| 3| 44705| 1| 134115 |
+| SDLP| 3| 39579| 2| 59369 |
+| UUP| 2| 46562| 0| Infinity |
 
 
 ## London
 
 | Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
-| ------------- |:------------- |:------------- |:------------- |:------------- |
-| Lab| 41| 50893| 49| 42584 |
-| Con| 25| 50752| 21| 60419 |
-| Lib Dem| 6| 56121| 3| 112242 |
-| Green| 1| 67561| 0| Infinity |
+| ------------- | -------------:| -------------:| -------------:|-------------:|
+| Lab| 36| 50356| 49| 36996 |
+| Con| 23| 52397| 21| 57387 |
+| Lib Dem| 11| 51142| 3| 187521 |
+| Green| 2| 57764| 0| Infinity |
+| Brexit| 1| 51735| 0| Infinity |
 
 
 ## Yorkshire and The Humber
 
 | Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
-| ------------- |:------------- |:------------- |:------------- |:------------- |
-| Lab| 28| 45602| 37| 34510 |
-| Con| 23| 45830| 17| 62006 |
-| Lib Dem| 2| 64844| 0| Infinity |
-| UKIP| 1| 67801| 0| Infinity |
+| ------------- | -------------:| -------------:| -------------:|-------------:|
+| Con| 24| 45724| 26| 42207 |
+| Lab| 22| 44990| 28| 35350 |
+| Lib Dem| 4| 51306| 0| Infinity |
+| Brexit| 3| 50193| 0| Infinity |
+| Green| 1| 57362| 0| Infinity |
 
 
 ## Eastern
 
 | Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
-| ------------- |:------------- |:------------- |:------------- |:------------- |
-| Con| 33| 51237| 50| 33816 |
-| Lab| 19| 53282| 7| 144623 |
-| Lib Dem| 4| 61016| 1| 244064 |
-| UKIP| 1| 77793| 0| Infinity |
-| Green| 1| 58704| 0| Infinity |
+| ------------- | -------------:| -------------:| -------------:|-------------:|
+| Con| 35| 50117| 52| 33733 |
+| Lab| 14| 53565| 5| 149981 |
+| Lib Dem| 8| 51356| 1| 410849 |
+| Green| 1| 90957| 0| Infinity |
 
 
 ## South West
 
 | Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
-| ------------- |:------------- |:------------- |:------------- |:------------- |
-| Con| 30| 51321| 47| 32758 |
-| Lab| 16| 54484| 7| 124534 |
-| Lib Dem| 8| 56073| 1| 448582 |
-| Green| 1| 67644| 0| Infinity |
+| ------------- | -------------:| -------------:| -------------:|-------------:|
+| Con| 30| 53736| 48| 33585 |
+| Lab| 13| 54843| 6| 118826 |
+| Lib Dem| 10| 55450| 1| 554500 |
+| Green| 2| 57506| 0| Infinity |
 
 
 ## North East
 
 | Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
-| ------------- |:------------- |:------------- |:------------- |:------------- |
-| Lab| 17| 41749| 26| 27298 |
-| Con| 10| 44061| 3| 146871 |
-| Lib Dem| 1| 58409| 0| Infinity |
-| UKIP| 1| 49348| 0| Infinity |
+| ------------- | -------------:| -------------:| -------------:|-------------:|
+| Lab| 13| 40932| 19| 28006 |
+| Con| 12| 39851| 10| 47821 |
+| Brexit| 2| 49479| 0| Infinity |
+| Lib Dem| 2| 42622| 0| Infinity |
 
 
 ## Totals
 
 | Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
-| ------------- |:------------- |:------------- |:------------- |:------------- |
-| Con| 280| 48689| 317| 43006 |
-| Lab| 270| 47683| 262| 49138 |
-| Lib Dem| 43| 55157| 12| 197647 |
-| SNP| 22| 44435| 35| 27931 |
-| DUP| 7| 41759| 10| 29232 |
-| UKIP| 7| 84836| 0| Infinity |
-| Green| 6| 87562| 1| 525371 |
-| SF| 6| 39819| 7| 34131 |
-| PC| 4| 41117| 4| 41117 |
-| SDLP| 2| 47710| 0| Infinity |
-| UUP| 2| 41640| 0| Infinity |
-| Alliance| 1| 64553| 0| Infinity |
-
-
+| ------------- | -------------:| -------------:| -------------:|-------------:|
+| Con| 290| 48161| 365| 38265 |
+| Lab| 217| 47322| 202| 50836 |
+| Lib Dem| 70| 52806| 11| 336038 |
+| SNP| 28| 44370| 48| 25883 |
+| Green| 12| 72141| 1| 865697 |
+| Brexit| 11| 58391| 0| Infinity |
+| DUP| 6| 40688| 8| 30516 |
+| PC| 4| 38316| 4| 38316 |
+| SF| 4| 45463| 7| 25979 |
+| Alliance| 3| 44705| 1| 134115 |
+| SDLP| 3| 39579| 2| 59369 |
+| UUP| 2| 46562| 0| Infinity |
