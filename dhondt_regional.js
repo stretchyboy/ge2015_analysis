@@ -4,6 +4,8 @@ var fs = require('fs');
 // was file from  https://cf.eip.telegraph.co.uk/assets/election2017/allresults.json but it has weird seat names and no ONS_ID
 var request = require('request');
 
+var bNoneIsaParty = false;
+
 function normParty(sParty){
     return sParty.replace(" Co-op","");
 }
@@ -36,6 +38,8 @@ function formatResult(sZone, oDHZone, oZone) {
         }
         sOutput += " |\n";
     });
+    //sOutput += "| None Voters | | | | | "+(oZone["none voters"])+" |\n";
+
     sOutput += "\n\n";
     return sOutput;
 };
@@ -68,12 +72,12 @@ request({
   });
 
   var oRegions = {};
-  var oNational = {seats:0, votes:0, "parties":{}};
+  var oNational = {seats:0, votes:0, "none voters":0, "parties":{}};
 
   aSeats.forEach(function(oSeat){
           //console.log("oSeat =", oSeat);
           if(typeof oRegions[oSeat.region] === "undefined") {
-              oRegions[oSeat.region] = {"seats":0, "votes":0, "parties":{}};
+              oRegions[oSeat.region] = {"seats":0, "votes":0, "none voters":0, "parties":{}};
           }
 
           oRegions[oSeat.region].seats ++;
@@ -88,7 +92,9 @@ request({
                   fptp:0,
               };
           }
+
           oRegions[oSeat.region].parties[sNormParty].fptp ++;
+          //oRegions[oSeat.region]["none voters"] += oSeat.electorate - oSeat.turnout;
 
           if(typeof oNational.parties[sNormParty] === "undefined") {
               oNational.parties[sNormParty] = {
@@ -97,7 +103,26 @@ request({
               };
           }
 
+          if(bNoneIsaParty){
+          if(typeof oRegions[oSeat.region].parties["None"] === "undefined") {
+              oRegions[oSeat.region].parties["None"] = {
+                  votes:0,
+                  fptp:0,
+              };
+          }
+          oRegions[oSeat.region].parties["None"].votes += oSeat.electorate - oSeat.turnout;
+
+          if(typeof oNational.parties["None"] === "undefined") {
+              oNational.parties["None"] = {
+                  votes:0,
+                  fptp:0,
+              };
+          }
+          oNational.parties["None"].votes += oSeat.electorate - oSeat.turnout;
+          }
+
           oNational.parties[sNormParty].fptp ++;
+          //oNational["none voters"] += oSeat.electorate - oSeat.turnout;
 
           if(oSeat.candidates.length){
             iCandidates ++;
@@ -122,6 +147,8 @@ request({
               }
               oNational.parties[sNormParty].votes += oCandiate.votes;
               oNational.votes += oCandiate.votes;
+
+
 
               //console.log("oCandiate =", oCandiate);
           });
