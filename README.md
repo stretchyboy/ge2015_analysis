@@ -1,13 +1,31 @@
 # UK General Election 2019 Analysis
 D'Hondt Proportional Representation interpretation of the UK General Election Results December 2019
 
-The data - contains all the seats in the UK, the region they are in and the valid votes for each candidate.
+The Guardian data - contains all the seats in the UK, the region they are in and the valid votes for each candidate.
 
-dhondt_regional.js - Uses the D'Hondt method ( https://en.wikipedia.org/wiki/D%27Hondt_method ) to assign the currently existing number of seats in each (Government Office) region. This seems more appropriate than just doing it across the whole UK as a whole as it gives regional representation.
+dhondt_regional.js - Uses the D'Hondt method ( https://en.wikipedia.org/wiki/D%27Hondt_method ) to assign the currently existing number of seats in each (Government Office) region.
 
 The code is ugly but I did it in one go in 2015 and wasn't expecting to use it again so often (be kind).
 
 The output of those calculations is :
+## UK Totals
+
+| Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
+| ------------- | -------------:| -------------:| -------------:|-------------:|
+| Con| 290| 48161| 365| 38265 |
+| Lab| 217| 47322| 202| 50836 |
+| Lib Dem| 70| 52806| 11| 336038 |
+| SNP| 28| 44370| 48| 25883 |
+| Green| 12| 72141| 1| 865697 |
+| Brexit| 11| 58391| 0| Infinity |
+| DUP| 6| 40688| 8| 30516 |
+| PC| 4| 38316| 4| 38316 |
+| SF| 4| 45463| 7| 25979 |
+| Alliance| 3| 44705| 1| 134115 |
+| SDLP| 3| 39579| 2| 59369 |
+| UUP| 2| 46562| 0| Infinity |
+
+
 ## Wales
 
 | Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
@@ -133,19 +151,3 @@ The output of those calculations is :
 | Lib Dem| 2| 42622| 0| Infinity |
 
 
-## Totals
-
-| Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |
-| ------------- | -------------:| -------------:| -------------:|-------------:|
-| Con| 290| 48161| 365| 38265 |
-| Lab| 217| 47322| 202| 50836 |
-| Lib Dem| 70| 52806| 11| 336038 |
-| SNP| 28| 44370| 48| 25883 |
-| Green| 12| 72141| 1| 865697 |
-| Brexit| 11| 58391| 0| Infinity |
-| DUP| 6| 40688| 8| 30516 |
-| PC| 4| 38316| 4| 38316 |
-| SF| 4| 45463| 7| 25979 |
-| Alliance| 3| 44705| 1| 134115 |
-| SDLP| 3| 39579| 2| 59369 |
-| UUP| 2| 46562| 0| Infinity |

@@ -205,11 +205,12 @@ request({
   //console.log("oDHondtNational =", oDHondtNational);
 
   var sMD = fs.readFileSync("readme_top.md")
+  sMD += formatResult("UK Totals", oDHondtNational, oNational);
+
   for (var sRegion in oDHondt) {
       sMD += formatResult(sRegion, oDHondt[sRegion], oRegions[sRegion]);
   }
 
-  sMD += formatResult("Totals", oDHondtNational, oNational);
 
 
   fs.writeFileSync("README.md", sMD);
