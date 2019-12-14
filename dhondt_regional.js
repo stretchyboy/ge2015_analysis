@@ -4,21 +4,6 @@ var fs = require('fs');
 // was file from  https://cf.eip.telegraph.co.uk/assets/election2017/allresults.json but it has weird seat names and no ONS_ID
 var request = require('request');
 
-var brexit={
-  "SNP":"Remain",
-  "SF":"Neutral",
-  "DUP":"Brexit",
-  "Con":"Brexit",
-  "PC":"Remain",
-  "Lab":"Ref",
-  "SDLP":"Remain",
-  "Alliance":"Brexit",
-  "Lib Dem":"Brexit",
-  "Green":"Brexit",
-  "Brexit":"Brexit",
-  "UUP":"Brexit"
-}
-
 function normParty(sParty){
     return sParty.replace(" Co-op","");
 }
@@ -26,17 +11,16 @@ function normParty(sParty){
 function formatResult(sZone, oDHZone, oZone) {
     console.log(oZone);
     var sOutput = "## "+sZone+"\n\n";
-    sOutput += "| Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats |\n| ------------- | -------------:| -------------:| -------------:|-------------:|\n";
+    sOutput += "| Party | PR Seats | PR votes/seats | FPTP Seats | FPTP votes/seats | Votes |\n| ------------- | -------------:| -------------:| -------------:|-------------:|-------------:|\n";
     var aParties = [];
     for (sParty in oDHZone) {
         aParties.push({
             party:sParty,
             seats:oDHZone[sParty],
-            //votes:oZone.parties[sParty].votes,
             mpsperseat:Math.round(oZone.parties[sParty].votes / oDHZone[sParty]),
             fptpseats: oZone.parties[sParty].fptp,
             fptpmpsperseat:Math.round(oZone.parties[sParty].votes / oZone.parties[sParty].fptp),
-
+            votes:oZone.parties[sParty].votes,
         });
         //sOutput += "| "+sParty+ "| "+oZone[sParty]+ " |\n";
     }
